@@ -58,12 +58,11 @@ test.describe('Browser Tests', () => {
         await page.screenshot({ path: 'screenshots/screenshot_task_updated.png' });
     });
 
-        // Capture screenshot on failure
-        test.afterEach(async ({ page }, testInfo) => {
-            if (testInfo.status === 'failed') {
-                await page.screenshot({
-                    path: `screenshots/failed_test_${testInfo.title}.png`
-                });
-            }
-        });
+    test.afterEach(async ({ page }, testInfo) => {
+        if (testInfo.status === 'failed') {
+            await page.screenshot({
+                path: `screenshots/failed_test_${testInfo.title}.png`
+            });
+        }
+    });
 })
