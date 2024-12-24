@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Johnny Le",
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "^1.49.1",
