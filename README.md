@@ -33,5 +33,5 @@ When you run the tests, the following outputs will be generated:
    1. Screenshots of the browser tests located under /screenshots
    2. The most recent run test results (simple report) located under /test-results
    3. A HTML file of the test results (detailed report) located under /test-report
-- We can also add automation email reports to be sent out after the test is completed, however, as this was not a requirement outlined, I've decided to leave this functionality out.
+- We can also add automation email reports to be sent out after the test is completed, however, as this was not a requirement outlined and requires a recipient email + CICD set up, I've decided to leave this functionality out.
 - I also decided to add playwright config file to make configuration easier to allow for future scalability.
