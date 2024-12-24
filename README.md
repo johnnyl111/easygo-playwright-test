@@ -28,7 +28,7 @@ When you run the tests, the following outputs will be generated:
 
 ## Notes
 - For the browser tests, I've added both tests using online APIs as well as creating my own local db/server with MongoDB. The reason for this as I found limitations with the online APIs as the data didn't persist after performing POST requests.
-- I've also added 2 variations browser tests - one using a basic test and another one using POM. (POM is my preferred method as it makes the code more maintainable/scalable)
+- I've also added 2 variations for the browser tests - one using a basic test and another one using POM. (POM is my preferred method as it makes the code more maintainable/scalable)
 - Once you have run the test, it will generate 3 outputs/artifacts:
    1. Screenshots of the browser tests located under /screenshots
    2. The most recent run test results (simple report) located under /test-results
