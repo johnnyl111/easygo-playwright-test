@@ -1,5 +1,11 @@
 const { test, expect } = require('@playwright/test');
 
+/*
+I've added mongoDB local tests as I found with free API websites online 
+there was missing functionality to be able to add POST request where data actually persists
+and therefore you can't validate a GET request to confirm the previous POST request.
+*/
+
 test.describe('local tests using MongoDB', () => {
   let authToken;
 

@@ -6,6 +6,7 @@ test.describe('API Tests', () => {
   test('should successfully obtain authorisation token', async () => {
     const response = await fetch('https://reqres.in/api/login', {
         method: 'POST',
+        //this specific email and password is required from the website for a success response.
         body: JSON.stringify({
           email: 'eve.holt@reqres.in',
           password: 'cityslicka'
@@ -72,7 +73,6 @@ test.describe('API Tests POST then GET', () => {
         position: 'Quality Engineer'
         });
     })
-
     
     test('should successfully send GET request ', async ({ request }) => {
         const getResponse = await request.get('https://postman-echo.com/get?employee=Johnny%20Le&position=Quality%20Engineer');

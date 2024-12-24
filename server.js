@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const app = express();
 app.use(bodyParser.json());
 
+//I've set up a cluster on MongoDB
 const uri = "mongodb+srv://user1:easygo123@cluster0.ux0ul.mongodb.net/test-db?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
   serverApi: {
