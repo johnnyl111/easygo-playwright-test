@@ -18,7 +18,11 @@ test.describe('Browser Tests', () => {
     test('should confirm logged in successfully', async () => {
         //Verify logged in by checking if sidebar exists
         const sidebarElement = page.locator('[data-testid="app-sidebar-container"]');
-        await expect(sidebarElement).toBeVisible({ timeout: 10000 });
+        //I find the website sometimes takes a while to load so just made it 20secs for now
+        await expect(sidebarElement).toBeVisible({ timeout: 20000 });
+
+        await page.waitForTimeout(2000);
+        await page.screenshot({ path: 'screenshots/screenshot_login_success.png' });
     });
     
     test('should update record successfully with current time', async () => {
@@ -42,13 +46,24 @@ test.describe('Browser Tests', () => {
         const updatedText = `I have updated the task record at ${currentDateTime}`;
         await taskInputField.fill(updatedText);
     
+        //save update
         const submitButton = page.locator('[data-testid="task-editor-submit-button"]');
         await expect(submitButton).toBeVisible();
         await submitButton.click();
+
+        //close modal
         const closeTaskButton = page.locator('button[aria-label="Close task"]');
         await closeTaskButton.click();
+
+        await page.screenshot({ path: 'screenshots/screenshot_task_updated.png' });
     });
+
+        // Capture screenshot on failure
+        test.afterEach(async ({ page }, testInfo) => {
+            if (testInfo.status === 'failed') {
+                await page.screenshot({
+                    path: `screenshots/failed_test_${testInfo.title}.png`
+                });
+            }
+        });
 })
-
-
-
